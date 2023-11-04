@@ -4,7 +4,7 @@ import axios from 'axios';
 export default async function handler(req, res) {
 
   const referer = req.headers.referer || req.headers.referrer; // get the referer from the request headers
-    const apiKey = process.env.OPENAI;
+    const apiKey = process.env.NEXT_PUBLIC_OPENAI;
   if (req.method !== 'POST') {
     res.status(405).json({ message: 'Method should be POST' });
   } else if (process.env.NODE_ENV !== "development") {
